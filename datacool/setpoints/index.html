@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style type="text/css">
+    body {
+    	width:70%;
+    	margin: 10px auto;
+    }
+    #input-form {
+        margin: 20px;
+        max-width: 50%;
+    }
+
+    select {
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">AdeptDC</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="http://adeptdc.com">Home</a></li>
+        <!--<li><a href="About.html">About</a></li>
+        <li><a href="Customer Discovery.html">Customer Discovery</a></li>-->
+        <li><a href="http://datacoolsolutions.com/demo_new">Demo</a></li>
+        <li><a href="http://adeptdc.com/Research.html">Research@AdeptDC</a></li>
+        <!--<li><a href="Short Video Demo.html">Video</a></li>
+        <li><a href="Value Proposition.html">Value Proposition</a></li>-->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+    <p>
+        Please enter your details (* are required field):
+    </p>
+
+    <form id="input-form" role="form" action="handleInput.php" method="post">
+        <div class="form-group">
+            <label>Name*</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+            <label>E-mail*</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label>Organization</label>
+            <input type="text" class="form-control" name="org" placeholder="Enter orgnization">
+        </div>
+        <p>
+        DataCOOL uses a data-driven algorithm that keeps the maximum CPU temperature below a critical threshold with  most cost-optimal cooling set-points.<br> <b>This demo uses the <u>threshold CPU temperature =65 C.</u> <br> 
+        <hr>
+        <b>Since DataCOOL uses a data-driven algorithm, the demo is case-specific. Following details define the particular case:</b>
+        </p>
+        <ul>
+           
+            <li><a href="Diagrams/Ex_Fac.pdf">Facility</a></li>
+            <li><a href="Diagrams/Com_Infra.pdf">Computational Infrastructure</a></li>
+            <li><a href="Diagrams/Cool_Infra.pdf">Cooling Infrastructure</a></li>
+            <li><a href="Diagrams/Training_data.pdf">Training Data</a></li>
+            <li><a href="Diagrams/Cost_Modeling.pdf">Assumptions on Cost Modeling</a></li>
+        </ul>
+
+        <label>Please enter following variables for your data centers:</label>
+        <div class="dropdown">
+            <label>
+                Choose your workload type (<a href="https://datacool.files.wordpress.com/2014/05/workload.png">Guide</a>):
+            </label>
+            <select class="selectpicker" name="workload">
+                <option value="cloud">Cloud</option>
+                <option value="batch">Batch</option>
+                <option value="enterprise">Enterprise</option>
+                <option value="hpc">HPC</option>
+            </select>           
+        </div>  
+        <div class="form-group">
+            <label>Cost of energy ($/kWh)</label>
+            <input type="text" class="form-control" name="money" placeholder="in $/kwh">
+        </div>
+        <div class="form-group">
+            <label>Supply air temperature set-point of the CRAC unit (in 0C)</label>
+            <input type="text" class="form-control" name="temp">
+        </div>
+        <ul>
+           <li><a href="Diagrams/CRAC_Setpoint_Choice_Guide.pdf">Guide to CRAC Setpoint Choice</a></li>
+           <li>CRAC supply temperature must not be more than 29 C as the setup is a class-1 data center. </a></li>
+        </ul>
+        <div class="form-group">
+            <label>Chilled water pressure set-point for the rear door heat exchanger assembly (in Psi)</label>
+            <input type="text" class="form-control" name="rdhx">
+        </div>
+        <ul>
+           <li><a href="Diagrams/RDHx_Setpoint_Choice_Guide.pdf">Guide to RDHx Setpoint Choice</a></li>
+           <li>RDHx pressure must be more than 10 Psi as the setup is a class-1 data center. </a></li>
+        </ul>
+              
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+<!-- Total power (in kW):<br>
+PUE:<br>
+Number of computer room air-conditioning unit (CRAC) in your data center:<br>
+Supply air temperature set-points of the CRAC units (in 0C):<br>
+Number of rear door heat exchanger (RDHx) unit in your data center:<br>
+Pressure set-points of the RDHx unit (in Psi):<br>
+-->
+
+</body>
+</html>
+
+
+
+
+
